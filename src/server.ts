@@ -1,11 +1,22 @@
 import { AngularNodeAppEngine, createNodeRequestHandler, isMainModule, writeResponseToNodeResponse } from '@angular/ssr/node'
 import express from 'express'
 import { join } from 'node:path'
+import cookieParser from 'cookie-parser'
+import 'dotenv/config'
+
+import sessionRoutes from './server/routes/session.routes'
+import { sessionMiddleware } from './server/middlewares/session.middleware'
 
 const browserDistFolder = join(import.meta.dirname, '../browser')
 
 const app = express()
 const angularApp = new AngularNodeAppEngine()
+
+app.use(express.json())
+app.use(cookieParser())
+app.use(sessionMiddleware)
+
+app.use('/api/session', sessionRoutes)
 
 /**
  * Example Express Rest API endpoints can be defined here.
