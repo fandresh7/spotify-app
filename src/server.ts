@@ -14,9 +14,8 @@ const angularApp = new AngularNodeAppEngine()
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(sessionMiddleware)
 
-app.use('/api/session', sessionRoutes)
+app.use('/api/session', sessionMiddleware, sessionRoutes)
 
 /**
  * Example Express Rest API endpoints can be defined here.

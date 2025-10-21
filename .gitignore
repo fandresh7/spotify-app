@@ -42,4 +42,6 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 
+# Environment and sessions
 .env
+/sessions
