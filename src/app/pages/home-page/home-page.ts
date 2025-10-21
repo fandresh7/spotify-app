@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import { Users } from '../../services/users/users'
 
 @Component({
   selector: 'home-page',
@@ -6,4 +7,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core'
   templateUrl: './home-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomePage {}
+export class HomePage {
+  users = inject(Users)
+
+  constructor() {
+    this.users.getMe().subscribe()
+  }
+}

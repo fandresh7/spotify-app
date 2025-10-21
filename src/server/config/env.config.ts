@@ -14,6 +14,7 @@ export const env = {
   SPOTIFY_CLIENT_ID: process.env['SPOTIFY_CLIENT_ID'] || '',
   SPOTIFY_CLIENT_SECRET: process.env['SPOTIFY_CLIENT_SECRET'] || '',
   SPOTIFY_URI: process.env['SPOTIFY_URI'] || '',
+  SPOTIFY_URI_API: process.env['SPOTIFY_URI_API'] || '',
   SPOTIFY_SCOPE: process.env['SPOTIFY_SCOPE'] || '',
 
   // URLs

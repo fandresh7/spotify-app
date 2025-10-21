@@ -5,7 +5,9 @@ import cookieParser from 'cookie-parser'
 import 'dotenv/config'
 
 import sessionRoutes from './server/routes/session.routes'
+import usersRoutes from './server/routes/users.routes'
 import { sessionMiddleware } from './server/middlewares/session.middleware'
+import { requireAuth } from './server/middlewares/auth.middleware'
 
 const browserDistFolder = join(import.meta.dirname, '../browser')
 
@@ -16,6 +18,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use('/api/session', sessionMiddleware, sessionRoutes)
+app.use('/api/users', sessionMiddleware, requireAuth, usersRoutes)
 
 /**
  * Example Express Rest API endpoints can be defined here.

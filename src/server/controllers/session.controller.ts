@@ -2,6 +2,11 @@ import { Request, Response } from 'express'
 import { generateRandomString } from '../utils/random'
 import { env } from '../config/env.config'
 
+export const status = async (req: Request, res: Response) => {
+  const authenticated = !!req.session.accessToken
+  res.json({ authenticated })
+}
+
 export const authorize = async (req: Request, res: Response) => {
   const state = generateRandomString(16)
 
