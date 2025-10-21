@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing'
 
-import { Users } from './users'
+import { SessionApi } from './session-api'
 
-describe('Users', () => {
-  let service: Users
+describe('SessionApi', () => {
+  let service: SessionApi
 
   beforeEach(() => {
     TestBed.configureTestingModule({})
-    service = TestBed.inject(Users)
+    service = TestBed.inject(SessionApi)
   })
 
   it('should be created', () => {

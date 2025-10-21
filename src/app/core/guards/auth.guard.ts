@@ -1,13 +1,13 @@
 import { inject } from '@angular/core'
 import { Router, type CanActivateFn } from '@angular/router'
 import { map } from 'rxjs'
-import { Session } from '../services/session/session'
+import { SessionApi } from '@core/services/session-api/session-api'
 
 export const authGuard: CanActivateFn = () => {
-  const session = inject(Session)
+  const sessionApi = inject(SessionApi)
   const router = inject(Router)
 
-  return session.isAuthenticated().pipe(
+  return sessionApi.isAuthenticated().pipe(
     map(isAuth => {
       if (!isAuth) {
         router.navigate(['/login'])

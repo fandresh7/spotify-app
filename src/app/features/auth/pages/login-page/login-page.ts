@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import { toSignal } from '@angular/core/rxjs-interop'
-import { Session } from '../../services/session/session'
+import { SessionApi } from '@core/services/session-api/session-api'
 
 @Component({
   selector: 'login-page',
@@ -9,9 +9,9 @@ import { Session } from '../../services/session/session'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginPage {
-  session = inject(Session)
+  sessionApi = inject(SessionApi)
 
-  authorizeUrl = toSignal(this.session.getAuthorizeUrl())
+  authorizeUrl = toSignal(this.sessionApi.getAuthorizeUrl())
 
   login() {
     const url = this.authorizeUrl()

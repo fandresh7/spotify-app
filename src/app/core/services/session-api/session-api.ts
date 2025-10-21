@@ -1,16 +1,12 @@
 import { HttpClient } from '@angular/common/http'
 import { inject, Injectable } from '@angular/core'
 import { map } from 'rxjs'
-
-interface TokenResponse {
-  success: boolean
-  expires_in: number
-}
+import { TokenResponse } from '@core/interfaces/session.interfaces'
 
 @Injectable({
   providedIn: 'root'
 })
-export class Session {
+export class SessionApi {
   http = inject(HttpClient)
 
   getAuthorizeUrl() {

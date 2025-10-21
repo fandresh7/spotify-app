@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, inject, PLATFORM_ID, afterNextRender } from '@angular/core'
+import { isPlatformBrowser } from '@angular/common'
 import { ActivatedRoute, Router } from '@angular/router'
 import { firstValueFrom } from 'rxjs'
-import { Session } from '../../services/session/session'
-import { isPlatformBrowser } from '@angular/common'
+
+import { SessionApi } from '@core/services/session-api/session-api'
 
 @Component({
   selector: 'callback-page',
@@ -11,7 +12,7 @@ import { isPlatformBrowser } from '@angular/common'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CallbackPage {
-  session = inject(Session)
+  sessionApi = inject(SessionApi)
   router = inject(Router)
   route = inject(ActivatedRoute)
   platformId = inject(PLATFORM_ID)
@@ -51,7 +52,7 @@ export class CallbackPage {
 
   async getToken(code: string) {
     try {
-      const response$ = this.session.getToken(code)
+      const response$ = this.sessionApi.getToken(code)
       const response = await firstValueFrom(response$)
 
       if (!response.success) {
