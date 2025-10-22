@@ -1,0 +1,30 @@
+<div class="flex items-center gap-4">
+  <!-- Notifications -->
+  <button
+    class="text-gray flex h-8 w-8 items-center justify-center rounded-full transition-all duration-150 hover:scale-105 hover:text-white"
+    aria-label="Notifications">
+    <icon name="bell" />
+  </button>
+
+  <!-- User Profile Button -->
+  <button
+    (click)="toggleMenu()"
+    class="bg-dark hover:bg-dark-elevated flex items-center gap-2 rounded-full px-2 py-1 transition-all duration-150"
+    aria-label="User menu">
+    @if (userStore.user(); as user) {
+    <img
+      [src]="user.images[0]?.url || '/assets/default-avatar.png'"
+      [alt]="user.display_name"
+      class="h-7 w-7 rounded-full object-cover" />
+    <span class="hidden text-sm font-semibold text-white lg:block"> {{ user.display_name }} </span>
+    } @else {
+    <div class="bg-dark-elevated flex h-7 w-7 items-center justify-center rounded-full">
+      <icon name="user" />
+    </div>
+    }
+    <icon
+      name="chevron-down"
+      class="text-white transition-transform"
+      [class.rotate-180]="isMenuOpen()" />
+  </button>
+</div>
