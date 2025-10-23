@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, output, signal } from '@angular/core'
+import { ChangeDetectionStrategy, Component, computed, inject, output, signal } from '@angular/core'
 import { UserStore } from '@features/user/stores/user-store/user-store'
 import { Icon } from '../icons/icons.component'
 
@@ -13,6 +13,8 @@ export class UserProfile {
 
   isMenuOpen = signal(false)
   menuToggle = output<boolean>()
+
+  user = computed(() => this.userStore.user())
 
   toggleMenu() {
     this.isMenuOpen.update(open => !open)

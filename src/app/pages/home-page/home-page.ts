@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core'
-import { UserStore } from '@features/user/stores/user-store/user-store'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
 
 @Component({
   selector: 'home-page',
@@ -7,10 +6,4 @@ import { UserStore } from '@features/user/stores/user-store/user-store'
   templateUrl: './home-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomePage implements OnInit {
-  userStore = inject(UserStore)
-
-  ngOnInit() {
-    this.userStore.loadUser()
-  }
-}
+export class HomePage {}

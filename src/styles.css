@@ -164,12 +164,6 @@ body {
   background-clip: padding-box;
 }
 
-/* Focus Visible */
-*:focus-visible {
-  outline: 2px solid var(--color-spotify);
-  outline-offset: 2px;
-}
-
 /* Selection */
 ::selection {
   background-color: var(--color-spotify);
