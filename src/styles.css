@@ -22,6 +22,10 @@
   --color-dark-highlight: #1a1a1a;
   --color-dark-press: #000000;
   
+  /* Card Colors */
+  --color-card-base: #ffffff1a;
+  --color-card-hover: #ffffff33;
+  
   /* Text Colors - Simplified */
   --color-white: #ffffff;
   --color-gray: #b3b3b3;
