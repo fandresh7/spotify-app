@@ -1,17 +1,45 @@
-<section class="bg-dark-base/70 flex flex-col overflow-hidden rounded-lg p-4">
-  <section class="flex items-center justify-between">
-    <div>
-      <h3 class="font-bold">{{ playlist().name }}</h3>
-      <span class="text-xs">{{ playlist().tracks.total }} songs</span>
-    </div>
-    <div>
-      <icon name="drag"></icon>
-    </div>
+<section>
+  <button class="bg-spotify text-dark hover:bg-spotify-hover active:bg-spotify-active flex items-center gap-2 rounded-full px-4 py-2 font-semibold transition-all duration-200">
+    <icon name="plus"></icon>
+    <span>New playlist</span>
+  </button>
+</section>
+
+<section class="mt-4 grid h-full min-h-0 grid-cols-4 gap-4 overflow-y-hidden rounded-lg">
+  <!-- original playlist -->
+  <section class="bg-dark-base/50 flex flex-col gap-4 overflow-hidden rounded-lg p-4">
+    <section class="flex items-center justify-between">
+      <div>
+        <h3 class="font-bold">{{ playlist().name }}</h3>
+        <span class="text-xs">{{ playlist().tracks.total }} songs</span>
+      </div>
+    </section>
+
+    <section class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-scroll pb-4">
+      @for(track of tracks(); track track.id) {
+      <song-card [track]="track"></song-card>
+      }
+    </section>
   </section>
 
-  <section class="mt-4 flex min-h-0 flex-1 flex-col gap-4 overflow-y-scroll pb-4">
-    @for(track of tracks(); track track.id) {
-    <song-card [track]="track"></song-card>
-    }
+  <!-- other playlists -->
+  @for(playlist of supportPlaylists(); track playlist.name) {
+  <section class="bg-dark-base/50 flex flex-col gap-4 overflow-hidden rounded-lg p-4">
+    <section class="flex items-center justify-between">
+      <div>
+        <h3 class="font-bold">{{ playlist.name }}</h3>
+        <span class="text-xs">{{ playlist.tracks.length }} songs</span>
+      </div>
+      <div>
+        <icon name="drag"></icon>
+      </div>
+    </section>
+
+    <section class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-scroll pb-4">
+      @for(track of playlist.tracks; track track.id) {
+      <song-card [track]="track"></song-card>
+      }
+    </section>
   </section>
+  }
 </section>
