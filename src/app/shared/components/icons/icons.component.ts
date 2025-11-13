@@ -164,6 +164,16 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
           <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
         </svg>
       }
+      @case ('drag') {
+        <svg
+          [attr.width]="size()"
+          [attr.height]="size()"
+          viewBox="0 0 16 16"
+          fill="currentColor">
+          <path
+            d="M3 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4.5 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4.5 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM3 10.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4.5 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4.5 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+        </svg>
+      }
       @case ('volume') {
         <svg
           [attr.width]="size()"
@@ -266,6 +276,7 @@ export class Icon {
     | 'skip-back'
     | 'skip-forward'
     | 'spotify'
+    | 'drag'
   >()
   size = input<number>(16)
 }
