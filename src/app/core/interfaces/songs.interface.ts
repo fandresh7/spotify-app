@@ -26,6 +26,15 @@ export interface AddedBy {
   name?: string
 }
 
+export interface Artist {
+  external_urls: ExternalUrls
+  href: string
+  id: string
+  type: string
+  uri: string
+  name?: string
+}
+
 export interface ExternalUrls {
   spotify: string
 }
@@ -38,7 +47,7 @@ export interface Track {
   episode: boolean
   track: boolean
   album: Album
-  artists: AddedBy[]
+  artists: Artist[]
   disc_number: number
   track_number: number
   duration_ms: number

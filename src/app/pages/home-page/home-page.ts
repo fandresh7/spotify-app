@@ -1,15 +1,16 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core'
-import { Playlist as PlaylistInterface } from '@core/interfaces/playlists.interfaces'
-import { Song } from '@core/interfaces/songs.interface'
+import { firstValueFrom, map } from 'rxjs'
+
+import { Playlist } from '@core/interfaces/playlists.interfaces'
+import { Track } from '@core/interfaces/songs.interface'
 import { PlaylistsApi } from '@core/services/playlists-api/playlists-api'
 import { PlaylistsStore } from '@core/stores/playlists-store/playlists-store'
 import { PlaylistCard } from '@features/playlists/components/playlist-card/playlist-card'
-import { firstValueFrom, map } from 'rxjs'
-import { Playlist } from '@features/playlists/components/playlist/playlist'
+import { PlaylistsWrapper } from '@features/playlists/components/playlists-wrapper/playlists-wrapper'
 
 @Component({
   selector: 'home-page',
-  imports: [PlaylistCard, Playlist],
+  imports: [PlaylistCard, PlaylistsWrapper],
   templateUrl: './home-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -19,20 +20,24 @@ export class HomePage {
 
   playlists = computed(() => this.playlistsStore.playlists())
 
-  selectedPlaylist = signal<PlaylistInterface | null>(null)
-  tracks = signal<Song[] | null>(null)
+  selectedPlaylist = signal<Playlist | null>(null)
+  tracks = signal<Track[]>([])
 
   constructor() {
     this.playlistsStore.loadPlaylists()
   }
 
-  async loadPlaylistTracks(playlist: PlaylistInterface) {
-    const tracks$ = this.playlistsApi.getPlaylistTracks(playlist).pipe(map(response => response.items))
-    const tracks = await firstValueFrom(tracks$)
+  async loadPlaylistTracks(playlist: Playlist) {
+    this.tracks.set([])
+
+    const response$ = this.playlistsApi.getPlaylistTracks(playlist).pipe(map(response => response.items))
+    const response = await firstValueFrom(response$)
+
+    const tracks = response.map(item => item.track)
     this.tracks.set(tracks)
   }
 
-  onPlaylistSelected(playlist: PlaylistInterface) {
+  onPlaylistSelected(playlist: Playlist) {
     this.loadPlaylistTracks(playlist)
     this.selectedPlaylist.set(playlist)
   }

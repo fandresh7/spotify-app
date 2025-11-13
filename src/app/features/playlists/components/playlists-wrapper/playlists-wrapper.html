@@ -1,0 +1,17 @@
+<section class="bg-dark-base/70 flex flex-col overflow-hidden rounded-lg p-4">
+  <section class="flex items-center justify-between">
+    <div>
+      <h3 class="font-bold">{{ playlist().name }}</h3>
+      <span class="text-xs">{{ playlist().tracks.total }} songs</span>
+    </div>
+    <div>
+      <icon name="drag"></icon>
+    </div>
+  </section>
+
+  <section class="mt-4 flex min-h-0 flex-1 flex-col gap-4 overflow-y-scroll pb-4">
+    @for(track of tracks(); track track.id) {
+    <song-card [track]="track"></song-card>
+    }
+  </section>
+</section>

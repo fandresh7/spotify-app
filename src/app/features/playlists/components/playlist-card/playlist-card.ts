@@ -14,13 +14,11 @@ import { Playlist } from '@core/interfaces/playlists.interfaces'
 })
 export class PlaylistCard {
   playlist = input.required<Playlist>()
-
   clicked = output<Playlist>()
 
   image = computed(() => this.playlist().images.at(-1)!)
 
   onClick() {
-    console.log('here')
     this.clicked.emit(this.playlist())
   }
 }

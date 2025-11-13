@@ -1,12 +1,12 @@
 <img
   class="h-12 w-12 transition-opacity duration-500 group-hover/song:opacity-80"
-  src="https://mosaic.scdn.co/640/ab67616d00001e028cd19acfaf7a63e55400263cab67616d00001e02adff47c34f58aaf13c78b9f5ab67616d00001e02c6885acc97b6a8b683e41909ab67616d00001e02df525e61c698f774617fa9ee"
+  [src]="track().album.images[0].url"
   alt=""
   loading="lazy" />
 
 <div class="flex flex-col gap-0.5 text-left">
-  <p class="font-bold text-balance">One Way - Live</p>
-  <p class="text-balance">Hillsong United</p>
+  <p class="[display:-webkit-box] [overflow:hidden] font-bold [-webkit-box-orient:vertical] [-webkit-line-clamp:1]">{{ track().name }}</p>
+  <p class="text-balance">{{ track().artists[0].name }}</p>
 </div>
 
 <icon

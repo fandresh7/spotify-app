@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component, input } from '@angular/core'
+import { Track } from '@core/interfaces/songs.interface'
 import { Icon } from '@shared/components'
 
 @Component({
@@ -10,4 +11,6 @@ import { Icon } from '@shared/components'
     class: 'group/song relative min-h-12 bg-transparent hover:bg-card-hover flex cursor-pointer flex-row items-center gap-2 overflow-hidden rounded pr-2 transition-all duration-500'
   }
 })
-export class SongCard {}
+export class SongCard {
+  track = input.required<Track>()
+}
