@@ -1,0 +1,732 @@
+{
+  "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs/playlists?offset=0&limit=50&locale=en-US,en;q%3D0.6",
+  "limit": 50,
+  "next": null,
+  "offset": 0,
+  "previous": null,
+  "total": 17,
+  "items": [
+    {
+      "collaborative": false,
+      "description": "A Christmas Collection with the best Christmas Cover songs &amp; Christmas Jazz Carols. Enjoy an unique Christmas Music, 2025 Christmas Playlist, featuring popular Christmas Carols such as All I want for Christmas is you, Blue Christmas, Feliz Navidad and more. Merry Christmas and a Happy New Year!",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/0yVOnyZpUygdwuQYEOc4wi"
+      },
+      "href": "https://api.spotify.com/v1/playlists/0yVOnyZpUygdwuQYEOc4wi",
+      "id": "0yVOnyZpUygdwuQYEOc4wi",
+      "images": [
+        {
+          "height": null,
+          "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84c2bac2c6ae89ee639a9cafe6",
+          "width": null
+        }
+      ],
+      "name": "Christmas Jazz 2025 ☃️ Cozy Jazz Music & Jazz Covers",
+      "owner": {
+        "display_name": "LoFi House Collective",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/gnrxfzm8d2qxrxsfzs7ox76mp"
+        },
+        "href": "https://api.spotify.com/v1/users/gnrxfzm8d2qxrxsfzs7ox76mp",
+        "id": "gnrxfzm8d2qxrxsfzs7ox76mp",
+        "type": "user",
+        "uri": "spotify:user:gnrxfzm8d2qxrxsfzs7ox76mp"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAA1y2ZDivZ/+MYgosZAddJUQh5b5D0",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/0yVOnyZpUygdwuQYEOc4wi/tracks",
+        "total": 503
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:0yVOnyZpUygdwuQYEOc4wi"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/2BerCywDOMbwSei7FdOR6y"
+      },
+      "href": "https://api.spotify.com/v1/playlists/2BerCywDOMbwSei7FdOR6y",
+      "id": "2BerCywDOMbwSei7FdOR6y",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d00001e021b5d9a92f9db4346734ab808ab67616d00001e022e842cd49a4c3e2f4ca6bffeab67616d00001e026bd7e80949288df8edc06f99ab67616d00001e02e80e9b07377d5b29f0703019",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d00001e021b5d9a92f9db4346734ab808ab67616d00001e022e842cd49a4c3e2f4ca6bffeab67616d00001e026bd7e80949288df8edc06f99ab67616d00001e02e80e9b07377d5b29f0703019",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d00001e021b5d9a92f9db4346734ab808ab67616d00001e022e842cd49a4c3e2f4ca6bffeab67616d00001e026bd7e80949288df8edc06f99ab67616d00001e02e80e9b07377d5b29f0703019",
+          "width": 60
+        }
+      ],
+      "name": "Hillsong",
+      "owner": {
+        "display_name": "Andrés Hortua",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/hgdfhgrp1hds8p4j8yrp5rixs"
+        },
+        "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs",
+        "id": "hgdfhgrp1hds8p4j8yrp5rixs",
+        "type": "user",
+        "uri": "spotify:user:hgdfhgrp1hds8p4j8yrp5rixs"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "AAAA0LHXOw5WQkV628bHrXVBLl3Q7jUs",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/2BerCywDOMbwSei7FdOR6y/tracks",
+        "total": 106
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:2BerCywDOMbwSei7FdOR6y"
+    },
+    {
+      "collaborative": false,
+      "description": "@gospelzn - Musica Cristiana 2025 Exitos de alabanza, adoración 2025 - By Lino Music Group®",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/3zZIAW5yHEhalQkno3wOjQ"
+      },
+      "href": "https://api.spotify.com/v1/playlists/3zZIAW5yHEhalQkno3wOjQ",
+      "id": "3zZIAW5yHEhalQkno3wOjQ",
+      "images": [
+        {
+          "height": null,
+          "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c84e175b3e56cf821a7bb3e60",
+          "width": null
+        }
+      ],
+      "name": "TOP MÚSICA CRISTIANA - Éxitos Cristianos 2025",
+      "owner": {
+        "display_name": "Gospel Zone",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/31qgxj4n35xfut63gry4ydowpwbm"
+        },
+        "href": "https://api.spotify.com/v1/users/31qgxj4n35xfut63gry4ydowpwbm",
+        "id": "31qgxj4n35xfut63gry4ydowpwbm",
+        "type": "user",
+        "uri": "spotify:user:31qgxj4n35xfut63gry4ydowpwbm"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAMPxa4d2+jO95UjFTdMasfhS3cTt5b",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/3zZIAW5yHEhalQkno3wOjQ/tracks",
+        "total": 130
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:3zZIAW5yHEhalQkno3wOjQ"
+    },
+    {
+      "collaborative": false,
+      "description": "The best of Christian Pop 2025! Uplifting, catchy, faith-filled hits from today’s most popular voices in Christian music. Featuring Citizen Way, Kevin Winebarger, Jasmine Murray, and more. Worship for January February March April May June July August September October November December all year!",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/1HEWXi4DepLmcK4vRQJD1l"
+      },
+      "href": "https://api.spotify.com/v1/playlists/1HEWXi4DepLmcK4vRQJD1l",
+      "id": "1HEWXi4DepLmcK4vRQJD1l",
+      "images": [
+        {
+          "height": null,
+          "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84e241ea3c2552c71f5c255c00",
+          "width": null
+        }
+      ],
+      "name": "Christian Pop 2025",
+      "owner": {
+        "display_name": "Chord & Co.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/317a3tqsjqmcjc254vvtsvvnkxbq"
+        },
+        "href": "https://api.spotify.com/v1/users/317a3tqsjqmcjc254vvtsvvnkxbq",
+        "id": "317a3tqsjqmcjc254vvtsvvnkxbq",
+        "type": "user",
+        "uri": "spotify:user:317a3tqsjqmcjc254vvtsvvnkxbq"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAAEt12CB7v8kr+V8z1OiX2eoXo/GXH",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/1HEWXi4DepLmcK4vRQJD1l/tracks",
+        "total": 73
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:1HEWXi4DepLmcK4vRQJD1l"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/3xMx03jSFnMmqaIzm6cWEe"
+      },
+      "href": "https://api.spotify.com/v1/playlists/3xMx03jSFnMmqaIzm6cWEe",
+      "id": "3xMx03jSFnMmqaIzm6cWEe",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d00001e028cd19acfaf7a63e55400263cab67616d00001e02adff47c34f58aaf13c78b9f5ab67616d00001e02c6885acc97b6a8b683e41909ab67616d00001e02df525e61c698f774617fa9ee",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d00001e028cd19acfaf7a63e55400263cab67616d00001e02adff47c34f58aaf13c78b9f5ab67616d00001e02c6885acc97b6a8b683e41909ab67616d00001e02df525e61c698f774617fa9ee",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d00001e028cd19acfaf7a63e55400263cab67616d00001e02adff47c34f58aaf13c78b9f5ab67616d00001e02c6885acc97b6a8b683e41909ab67616d00001e02df525e61c698f774617fa9ee",
+          "width": 60
+        }
+      ],
+      "name": "Best",
+      "owner": {
+        "display_name": "Andrés Hortua",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/hgdfhgrp1hds8p4j8yrp5rixs"
+        },
+        "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs",
+        "id": "hgdfhgrp1hds8p4j8yrp5rixs",
+        "type": "user",
+        "uri": "spotify:user:hgdfhgrp1hds8p4j8yrp5rixs"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAAx+q5H5Wdr7RTDYL+coi/KjgwusTN",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/3xMx03jSFnMmqaIzm6cWEe/tracks",
+        "total": 148
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:3xMx03jSFnMmqaIzm6cWEe"
+    },
+    {
+      "collaborative": false,
+      "description": "Discover the most high-energy Christian songs of 2025! Upbeat worship, Christian pop, gospel, and chart-topping praise anthems that lift your spirit. Suggest songs via Instagram (link in bio). | Christian Music | Worship | CCM | Gospel | Praise | Upbeat | Energy | Faith | Viral | Billboard",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/2COK4fSZ5KeLCaOtmgdGAl"
+      },
+      "href": "https://api.spotify.com/v1/playlists/2COK4fSZ5KeLCaOtmgdGAl",
+      "id": "2COK4fSZ5KeLCaOtmgdGAl",
+      "images": [
+        {
+          "height": null,
+          "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84eb023b50e147418dfca374fa",
+          "width": null
+        }
+      ],
+      "name": "High-Energy Christian Favorites",
+      "owner": {
+        "display_name": "Christian Artist Breakthrough",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/31vs43swhxrnntpjbrw767kpedk4"
+        },
+        "href": "https://api.spotify.com/v1/users/31vs43swhxrnntpjbrw767kpedk4",
+        "id": "31vs43swhxrnntpjbrw767kpedk4",
+        "type": "user",
+        "uri": "spotify:user:31vs43swhxrnntpjbrw767kpedk4"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAAE/bXagV3sMPnjB3sZ/p3IcNJqUNi",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/2COK4fSZ5KeLCaOtmgdGAl/tracks",
+        "total": 64
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:2COK4fSZ5KeLCaOtmgdGAl"
+    },
+    {
+      "collaborative": false,
+      "description": "The best upbeat Christian songs of 2025—perfect for workout, running, jogging, walking, gym sessions, cardio, strength training, crossfit, and weightlifting. High-energy Christian fitness music to boost your motivation lift and get inspired. Featuring new &amp; KLove Air1 artists Forrest Frank, TobyMac.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/0RsRUmWdv3HzrBVhPwBl4f"
+      },
+      "href": "https://api.spotify.com/v1/playlists/0RsRUmWdv3HzrBVhPwBl4f",
+      "id": "0RsRUmWdv3HzrBVhPwBl4f",
+      "images": [
+        {
+          "height": null,
+          "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72ccedffdf4e77efbef7a36598b",
+          "width": null
+        }
+      ],
+      "name": "Best Upbeat Christian Songs 2025",
+      "owner": {
+        "display_name": "Chord & Co.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/317a3tqsjqmcjc254vvtsvvnkxbq"
+        },
+        "href": "https://api.spotify.com/v1/users/317a3tqsjqmcjc254vvtsvvnkxbq",
+        "id": "317a3tqsjqmcjc254vvtsvvnkxbq",
+        "type": "user",
+        "uri": "spotify:user:317a3tqsjqmcjc254vvtsvvnkxbq"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAACqIHCy9pXpKOX91FWDyMnvkqlLQD",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/0RsRUmWdv3HzrBVhPwBl4f/tracks",
+        "total": 49
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:0RsRUmWdv3HzrBVhPwBl4f"
+    },
+    {
+      "collaborative": false,
+      "description": "Cover: Chris Renzema. Contact: indiechristiannetwork@gmail.com for Christian music promotion",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/64OhVTzX5idVtueEetuDAe"
+      },
+      "href": "https://api.spotify.com/v1/playlists/64OhVTzX5idVtueEetuDAe",
+      "id": "64OhVTzX5idVtueEetuDAe",
+      "images": [
+        {
+          "height": null,
+          "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da840ea79a949f15294b36978eb2",
+          "width": null
+        }
+      ],
+      "name": "top christian pop hits",
+      "owner": {
+        "display_name": "Indie Christian",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/31onhj3enymnq2f5p24aepku63pi"
+        },
+        "href": "https://api.spotify.com/v1/users/31onhj3enymnq2f5p24aepku63pi",
+        "id": "31onhj3enymnq2f5p24aepku63pi",
+        "type": "user",
+        "uri": "spotify:user:31onhj3enymnq2f5p24aepku63pi"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAAmfPmX1AJXadDJuen95sHLkCUwigt",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/64OhVTzX5idVtueEetuDAe/tracks",
+        "total": 128
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:64OhVTzX5idVtueEetuDAe"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/1LxZySqIfAXpIFpfbYOQnc"
+      },
+      "href": "https://api.spotify.com/v1/playlists/1LxZySqIfAXpIFpfbYOQnc",
+      "id": "1LxZySqIfAXpIFpfbYOQnc",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d00001e023fa1cde08a07e944779fc433ab67616d00001e026babecdf268b94723c63f1c1ab67616d00001e0271d34c92114137828f968e50ab67616d00001e02ecdc0172d5f1ace84d149e1f",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d00001e023fa1cde08a07e944779fc433ab67616d00001e026babecdf268b94723c63f1c1ab67616d00001e0271d34c92114137828f968e50ab67616d00001e02ecdc0172d5f1ace84d149e1f",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d00001e023fa1cde08a07e944779fc433ab67616d00001e026babecdf268b94723c63f1c1ab67616d00001e0271d34c92114137828f968e50ab67616d00001e02ecdc0172d5f1ace84d149e1f",
+          "width": 60
+        }
+      ],
+      "name": "Nuevo",
+      "owner": {
+        "display_name": "Andrés Hortua",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/hgdfhgrp1hds8p4j8yrp5rixs"
+        },
+        "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs",
+        "id": "hgdfhgrp1hds8p4j8yrp5rixs",
+        "type": "user",
+        "uri": "spotify:user:hgdfhgrp1hds8p4j8yrp5rixs"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAASH+wFEeNkup2foMYrW7uiitutZHd",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/1LxZySqIfAXpIFpfbYOQnc/tracks",
+        "total": 68
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:1LxZySqIfAXpIFpfbYOQnc"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/5hAYV2ceFbdlegM72ddOLJ"
+      },
+      "href": "https://api.spotify.com/v1/playlists/5hAYV2ceFbdlegM72ddOLJ",
+      "id": "5hAYV2ceFbdlegM72ddOLJ",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d00001e02106fa02aaa287ec63af85aaeab67616d00001e022001bc1b4dd82d06631fcb9eab67616d00001e02e2dd4e821bcc3f70dc0c8ffdab67616d00001e02ea8f90e6f4992a3b43528f90",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d00001e02106fa02aaa287ec63af85aaeab67616d00001e022001bc1b4dd82d06631fcb9eab67616d00001e02e2dd4e821bcc3f70dc0c8ffdab67616d00001e02ea8f90e6f4992a3b43528f90",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d00001e02106fa02aaa287ec63af85aaeab67616d00001e022001bc1b4dd82d06631fcb9eab67616d00001e02e2dd4e821bcc3f70dc0c8ffdab67616d00001e02ea8f90e6f4992a3b43528f90",
+          "width": 60
+        }
+      ],
+      "name": "Others",
+      "owner": {
+        "display_name": "Andrés Hortua",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/hgdfhgrp1hds8p4j8yrp5rixs"
+        },
+        "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs",
+        "id": "hgdfhgrp1hds8p4j8yrp5rixs",
+        "type": "user",
+        "uri": "spotify:user:hgdfhgrp1hds8p4j8yrp5rixs"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAAZlIZcwfWP2QXAuRUzbkBWsEhm7mz",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/5hAYV2ceFbdlegM72ddOLJ/tracks",
+        "total": 80
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:5hAYV2ceFbdlegM72ddOLJ"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/6NBLt0XJoduSqk6E6YYEE1"
+      },
+      "href": "https://api.spotify.com/v1/playlists/6NBLt0XJoduSqk6E6YYEE1",
+      "id": "6NBLt0XJoduSqk6E6YYEE1",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d00001e021a77fbdd9696967adc9172c2ab67616d00001e02417cc363d7286a88489dee3cab67616d00001e02b19cb81319fbfd9ed54baeaeab67616d00001e02cb81eb3c1238c60f2bbfd3b5",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d00001e021a77fbdd9696967adc9172c2ab67616d00001e02417cc363d7286a88489dee3cab67616d00001e02b19cb81319fbfd9ed54baeaeab67616d00001e02cb81eb3c1238c60f2bbfd3b5",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d00001e021a77fbdd9696967adc9172c2ab67616d00001e02417cc363d7286a88489dee3cab67616d00001e02b19cb81319fbfd9ed54baeaeab67616d00001e02cb81eb3c1238c60f2bbfd3b5",
+          "width": 60
+        }
+      ],
+      "name": "Classic",
+      "owner": {
+        "display_name": "Andrés Hortua",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/hgdfhgrp1hds8p4j8yrp5rixs"
+        },
+        "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs",
+        "id": "hgdfhgrp1hds8p4j8yrp5rixs",
+        "type": "user",
+        "uri": "spotify:user:hgdfhgrp1hds8p4j8yrp5rixs"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAAHQxub+8Pnc26pOPD4OYuOrilGcpU",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/6NBLt0XJoduSqk6E6YYEE1/tracks",
+        "total": 22
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:6NBLt0XJoduSqk6E6YYEE1"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/0dsLVqYJYik5ndYoqVwlXp"
+      },
+      "href": "https://api.spotify.com/v1/playlists/0dsLVqYJYik5ndYoqVwlXp",
+      "id": "0dsLVqYJYik5ndYoqVwlXp",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d00001e022b8c918fabf2e8a8f65cf55fab67616d00001e02bdec0668383d2fa9b910fe44ab67616d00001e02cf907fc08730c8e3f9735053ab67616d00001e02f34a5e365b3fe2d7f01fa5c4",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d00001e022b8c918fabf2e8a8f65cf55fab67616d00001e02bdec0668383d2fa9b910fe44ab67616d00001e02cf907fc08730c8e3f9735053ab67616d00001e02f34a5e365b3fe2d7f01fa5c4",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d00001e022b8c918fabf2e8a8f65cf55fab67616d00001e02bdec0668383d2fa9b910fe44ab67616d00001e02cf907fc08730c8e3f9735053ab67616d00001e02f34a5e365b3fe2d7f01fa5c4",
+          "width": 60
+        }
+      ],
+      "name": "Devotional",
+      "owner": {
+        "display_name": "Andrés Hortua",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/hgdfhgrp1hds8p4j8yrp5rixs"
+        },
+        "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs",
+        "id": "hgdfhgrp1hds8p4j8yrp5rixs",
+        "type": "user",
+        "uri": "spotify:user:hgdfhgrp1hds8p4j8yrp5rixs"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAAJkGljjQaGQXeCe8xkHWi9n7BB9r0",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/0dsLVqYJYik5ndYoqVwlXp/tracks",
+        "total": 33
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:0dsLVqYJYik5ndYoqVwlXp"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/65LrWvSr6Us2K5P5QrM47r"
+      },
+      "href": "https://api.spotify.com/v1/playlists/65LrWvSr6Us2K5P5QrM47r",
+      "id": "65LrWvSr6Us2K5P5QrM47r",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d00001e022f4cea1bf125a287a42c5d4fab67616d00001e028783dbb8b03b22ba9528a46fab67616d00001e0294fd2e614d0862bdd2592594ab67616d00001e02e9229e5a4a94a8f0c801dc9f",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d00001e022f4cea1bf125a287a42c5d4fab67616d00001e028783dbb8b03b22ba9528a46fab67616d00001e0294fd2e614d0862bdd2592594ab67616d00001e02e9229e5a4a94a8f0c801dc9f",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d00001e022f4cea1bf125a287a42c5d4fab67616d00001e028783dbb8b03b22ba9528a46fab67616d00001e0294fd2e614d0862bdd2592594ab67616d00001e02e9229e5a4a94a8f0c801dc9f",
+          "width": 60
+        }
+      ],
+      "name": "Christmas",
+      "owner": {
+        "display_name": "Andrés Hortua",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/hgdfhgrp1hds8p4j8yrp5rixs"
+        },
+        "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs",
+        "id": "hgdfhgrp1hds8p4j8yrp5rixs",
+        "type": "user",
+        "uri": "spotify:user:hgdfhgrp1hds8p4j8yrp5rixs"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAALMg85k84s1LdpWodNVlL/mPpSZgb",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/65LrWvSr6Us2K5P5QrM47r/tracks",
+        "total": 30
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:65LrWvSr6Us2K5P5QrM47r"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/5UyIKY0OBC6xx8mMDXYTeq"
+      },
+      "href": "https://api.spotify.com/v1/playlists/5UyIKY0OBC6xx8mMDXYTeq",
+      "id": "5UyIKY0OBC6xx8mMDXYTeq",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d00001e02355aa14245402766b350562eab67616d00001e026e896a60cfce27188f824a94ab67616d00001e029f5beb1806c61943e36b4b52ab67616d00001e02c2053afe5e74eede413b27c4",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d00001e02355aa14245402766b350562eab67616d00001e026e896a60cfce27188f824a94ab67616d00001e029f5beb1806c61943e36b4b52ab67616d00001e02c2053afe5e74eede413b27c4",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d00001e02355aa14245402766b350562eab67616d00001e026e896a60cfce27188f824a94ab67616d00001e029f5beb1806c61943e36b4b52ab67616d00001e02c2053afe5e74eede413b27c4",
+          "width": 60
+        }
+      ],
+      "name": "Music",
+      "owner": {
+        "display_name": "Andrés Hortua",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/hgdfhgrp1hds8p4j8yrp5rixs"
+        },
+        "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs",
+        "id": "hgdfhgrp1hds8p4j8yrp5rixs",
+        "type": "user",
+        "uri": "spotify:user:hgdfhgrp1hds8p4j8yrp5rixs"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAACI6KxFtBP6ACtsxAMsceY2c6obgP3",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/5UyIKY0OBC6xx8mMDXYTeq/tracks",
+        "total": 224
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:5UyIKY0OBC6xx8mMDXYTeq"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/1BHXD6SScSyfh02qrOzUJz"
+      },
+      "href": "https://api.spotify.com/v1/playlists/1BHXD6SScSyfh02qrOzUJz",
+      "id": "1BHXD6SScSyfh02qrOzUJz",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d00001e0232326306b5375544538de43fab67616d00001e0240770e46f9d067c01160d99bab67616d00001e02afa9966f3f5fd478e056f486ab67616d00001e02b1da892fdacc91af30717462",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d00001e0232326306b5375544538de43fab67616d00001e0240770e46f9d067c01160d99bab67616d00001e02afa9966f3f5fd478e056f486ab67616d00001e02b1da892fdacc91af30717462",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d00001e0232326306b5375544538de43fab67616d00001e0240770e46f9d067c01160d99bab67616d00001e02afa9966f3f5fd478e056f486ab67616d00001e02b1da892fdacc91af30717462",
+          "width": 60
+        }
+      ],
+      "name": "Worship",
+      "owner": {
+        "display_name": "Andrés Hortua",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/hgdfhgrp1hds8p4j8yrp5rixs"
+        },
+        "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs",
+        "id": "hgdfhgrp1hds8p4j8yrp5rixs",
+        "type": "user",
+        "uri": "spotify:user:hgdfhgrp1hds8p4j8yrp5rixs"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAAOMW52yMxPEt5XmS7WkJQV8Bckoua",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/1BHXD6SScSyfh02qrOzUJz/tracks",
+        "total": 34
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:1BHXD6SScSyfh02qrOzUJz"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/6IYO4dOfvCPLHxsDjugwke"
+      },
+      "href": "https://api.spotify.com/v1/playlists/6IYO4dOfvCPLHxsDjugwke",
+      "id": "6IYO4dOfvCPLHxsDjugwke",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d00001e0200985ddddd8bd2df832320b8ab67616d00001e02127ab926ba63c324ac85bde3ab67616d00001e023e24827fc5c1b7d37746bbd5ab67616d00001e02bdec0668383d2fa9b910fe44",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d00001e0200985ddddd8bd2df832320b8ab67616d00001e02127ab926ba63c324ac85bde3ab67616d00001e023e24827fc5c1b7d37746bbd5ab67616d00001e02bdec0668383d2fa9b910fe44",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d00001e0200985ddddd8bd2df832320b8ab67616d00001e02127ab926ba63c324ac85bde3ab67616d00001e023e24827fc5c1b7d37746bbd5ab67616d00001e02bdec0668383d2fa9b910fe44",
+          "width": 60
+        }
+      ],
+      "name": "Favoritos",
+      "owner": {
+        "display_name": "Andrés Hortua",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/hgdfhgrp1hds8p4j8yrp5rixs"
+        },
+        "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs",
+        "id": "hgdfhgrp1hds8p4j8yrp5rixs",
+        "type": "user",
+        "uri": "spotify:user:hgdfhgrp1hds8p4j8yrp5rixs"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "AAAAQiRwb9QZAkifKsodbdXSmK1y3Tl3",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/6IYO4dOfvCPLHxsDjugwke/tracks",
+        "total": 59
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:6IYO4dOfvCPLHxsDjugwke"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/7vfX73iNQzasB9OwhRwxGp"
+      },
+      "href": "https://api.spotify.com/v1/playlists/7vfX73iNQzasB9OwhRwxGp",
+      "id": "7vfX73iNQzasB9OwhRwxGp",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d00001e0231119b262e991052360663edab67616d00001e0250ea433465b51df6d43194fdab67616d00001e02c26dc09f6d5610cc794a0f16ab67616d00001e02c98fdb5197b69d02e6e8df83",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d00001e0231119b262e991052360663edab67616d00001e0250ea433465b51df6d43194fdab67616d00001e02c26dc09f6d5610cc794a0f16ab67616d00001e02c98fdb5197b69d02e6e8df83",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d00001e0231119b262e991052360663edab67616d00001e0250ea433465b51df6d43194fdab67616d00001e02c26dc09f6d5610cc794a0f16ab67616d00001e02c98fdb5197b69d02e6e8df83",
+          "width": 60
+        }
+      ],
+      "name": "Favorites",
+      "owner": {
+        "display_name": "Andrés Hortua",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/hgdfhgrp1hds8p4j8yrp5rixs"
+        },
+        "href": "https://api.spotify.com/v1/users/hgdfhgrp1hds8p4j8yrp5rixs",
+        "id": "hgdfhgrp1hds8p4j8yrp5rixs",
+        "type": "user",
+        "uri": "spotify:user:hgdfhgrp1hds8p4j8yrp5rixs"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "AAAAmYHad4EJ/mYFgQvgWaEm4A+AvU3j",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/7vfX73iNQzasB9OwhRwxGp/tracks",
+        "total": 91
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:7vfX73iNQzasB9OwhRwxGp"
+    }
+  ]
+}

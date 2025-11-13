@@ -6,6 +6,8 @@ import 'dotenv/config'
 
 import sessionRoutes from './server/routes/session.routes'
 import usersRoutes from './server/routes/users.routes'
+import playlistsRoutes from './server/routes/playlists.routes'
+
 import { sessionMiddleware } from './server/middlewares/session.middleware'
 import { requireAuth } from './server/middlewares/auth.middleware'
 
@@ -19,6 +21,7 @@ app.use(cookieParser())
 
 app.use('/api/session', sessionMiddleware, sessionRoutes)
 app.use('/api/users', sessionMiddleware, requireAuth, usersRoutes)
+app.use('/api/playlists', sessionMiddleware, requireAuth, playlistsRoutes)
 
 /**
  * Example Express Rest API endpoints can be defined here.

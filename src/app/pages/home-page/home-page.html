@@ -1,16 +1,18 @@
-<section
-  class="@container flex w-full flex-col gap-16 p-8"
-  style="background: linear-gradient(#00000099 0, #121212 100%), rgb(32, 88, 128)">
-  <section class="grid grid-cols-1 gap-4 @sm:grid-cols-2 @lg:grid-cols-3">
-    <playlist-card></playlist-card>
-    <playlist-card></playlist-card>
-    <playlist-card></playlist-card>
-    <playlist-card></playlist-card>
-  </section>
+<section class="grid h-full grid-cols-[100px_1fr] gap-4 sm:grid-cols-[250px_1fr]">
+  <aside class="bg-dark-base min-h-0 overflow-y-auto rounded-lg p-4 pr-2">
+    <section class="flex flex-col gap-2">
+      @for (playlist of playlists(); track playlist.id) {
+      <playlist-card
+        [playlist]="playlist"
+        (clicked)="onPlaylistSelected($event)">
+      </playlist-card>
+      }
+    </section>
+  </aside>
 
-  <section class="flex gap-4">
-    <playlist></playlist>
-    <playlist></playlist>
-    <playlist></playlist>
+  <section
+    class="grid min-h-0 grid-cols-2 overflow-y-hidden rounded-lg p-4"
+    style="background: var(--gradient-primary)">
+    <playlist />
   </section>
 </section>

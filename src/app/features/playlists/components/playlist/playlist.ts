@@ -8,7 +8,7 @@ import { Icon } from '@shared/components'
   templateUrl: './playlist.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'p-4 bg-dark-base rounded-lg'
+    class: 'p-4 bg-red-500/70 rounded-lg flex flex-col overflow-hidden'
   }
 })
 export class Playlist {}

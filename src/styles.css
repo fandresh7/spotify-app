@@ -3,6 +3,9 @@
 @import '@angular/cdk/overlay-prebuilt.css';
 
 @theme {
+  --breakpoint-xs: 10rem; /* 160px */
+  --container-xs: 10rem; /* 160px */
+
   /* === COLORS === */
   
   /* Brand Colors */
@@ -37,6 +40,9 @@
   --color-warning: #ffa42b;
   --color-success: #1db954;
   --color-info: #3d91f4;
+
+  /* === GRADIENTS === */
+  --gradient-primary: linear-gradient(#00000099 0, #121212 100%), rgb(32, 88, 128);
   
   /* === SPACING === */
   --spacing-xxxs: 4px;
