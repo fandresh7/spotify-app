@@ -1,0 +1,59 @@
+/* CDK Drag and Drop Styles */
+
+/* Dragging preview - más rápido y responsivo */
+.cdk-drag-preview {
+  opacity: 0.9;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  background-color: var(--color-dark-elevated);
+  cursor: grabbing !important;
+}
+
+/* Placeholder while dragging */
+.cdk-drag-placeholder {
+  opacity: 0.3;
+  background-color: var(--color-dark-tinted);
+  border: 2px dashed var(--color-gray-dark);
+  border-radius: 8px;
+  transition: opacity 100ms ease-out;
+}
+
+/* Animaciones más rápidas y suaves */
+.cdk-drag-animating {
+  transition: transform 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Mejorar la sensibilidad del drag */
+.cdk-drag {
+  touch-action: none;
+  user-select: none;
+  will-change: transform;
+}
+
+/* Optimización específica para song-cards */
+song-card.cdk-drag {
+  transition: none !important;
+}
+
+song-card.cdk-drag-preview {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Drag handle */
+.cdk-drag-handle {
+  cursor: grab;
+}
+
+.cdk-drag-handle:active {
+  cursor: grabbing;
+}
+
+/* Drop list receiving state */
+.cdk-drop-list-receiving {
+  background-color: var(--color-dark-tinted-highlight);
+}

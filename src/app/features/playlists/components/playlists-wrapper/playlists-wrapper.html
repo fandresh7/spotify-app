@@ -5,39 +5,44 @@
   </button>
 </section>
 
-<section class="mt-4 grid h-full min-h-0 grid-cols-4 gap-4 overflow-y-hidden rounded-lg">
-  <!-- original playlist -->
-  <section class="bg-dark-base/50 flex flex-col gap-4 overflow-hidden rounded-lg p-4">
-    <section class="flex items-center justify-between">
-      <div>
-        <h3 class="font-bold">{{ playlist().name }}</h3>
-        <span class="text-xs">{{ playlist().tracks.total }} songs</span>
-      </div>
-    </section>
-
-    <section class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-scroll pb-4">
-      @for(track of tracks(); track track.id) {
-      <song-card [track]="track"></song-card>
-      }
-    </section>
-  </section>
-
-  <!-- other playlists -->
-  @for(playlist of supportPlaylists(); track playlist.name) {
-  <section class="bg-dark-base/50 flex flex-col gap-4 overflow-hidden rounded-lg p-4">
+<section
+  cdkDropList
+  [cdkDropListOrientation]="'horizontal'"
+  (cdkDropListDropped)="dropPlaylist($event)"
+  class="mt-4 grid h-full min-h-0 grid-cols-4 gap-4 overflow-y-hidden rounded-lg">
+  @for(playlist of playlists(); track playlist.name) {
+  <section
+    cdkDrag
+    [cdkDragData]="playlist"
+    class="bg-dark-base/50 flex flex-col gap-4 overflow-hidden rounded-lg p-4">
     <section class="flex items-center justify-between">
       <div>
         <h3 class="font-bold">{{ playlist.name }}</h3>
         <span class="text-xs">{{ playlist.tracks.length }} songs</span>
       </div>
       <div>
-        <icon name="drag"></icon>
+        <icon
+          cdkDragHandle
+          class="hover:text-spotify-hover cursor-grab transition-colors duration-200"
+          name="drag">
+        </icon>
       </div>
     </section>
 
-    <section class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-scroll pb-4">
+    <section
+      cdkDropList
+      [id]="playlist.id"
+      [cdkDropListData]="playlist.tracks"
+      [cdkDropListConnectedTo]="getConnectedLists()"
+      (cdkDropListDropped)="dropTrack($event)"
+      class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-scroll pb-4">
       @for(track of playlist.tracks; track track.id) {
-      <song-card [track]="track"></song-card>
+      <song-card
+        cdkDrag
+        [cdkDragStartDelay]="0"
+        [cdkDragData]="track"
+        [track]="track">
+      </song-card>
       }
     </section>
   </section>

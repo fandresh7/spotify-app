@@ -8,7 +8,7 @@ import { Icon } from '@shared/components'
   templateUrl: './song-card.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'group/song relative min-h-12 bg-transparent hover:bg-card-hover flex cursor-pointer flex-row items-center gap-2 overflow-hidden rounded pr-2 transition-all duration-500'
+    class: 'group/song relative min-h-12 bg-transparent hover:bg-card-hover flex cursor-pointer flex-row items-center gap-2 overflow-hidden rounded pr-2 transition-colors duration-200'
   }
 })
 export class SongCard {
