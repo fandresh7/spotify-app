@@ -57,3 +57,27 @@ song-card.cdk-drag-preview {
 .cdk-drop-list-receiving {
   background-color: var(--color-dark-tinted-highlight);
 }
+
+/* Horizontal scroll styling */
+:host ::ng-deep section[cdkDropList] {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+:host ::ng-deep section[cdkDropList]::-webkit-scrollbar {
+  height: 8px;
+}
+
+:host ::ng-deep section[cdkDropList]::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 0 8px;
+}
+
+:host ::ng-deep section[cdkDropList]::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+:host ::ng-deep section[cdkDropList]::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
