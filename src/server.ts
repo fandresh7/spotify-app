@@ -11,6 +11,7 @@ import playerRoutes from './server/routes/player.routes'
 
 import { sessionMiddleware } from './server/middlewares/session.middleware'
 import { requireAuth } from './server/middlewares/auth.middleware'
+import { env } from './server/config/env.config'
 
 const browserDistFolder = join(import.meta.dirname, '../browser')
 
@@ -18,7 +19,7 @@ const app = express()
 const angularApp = new AngularNodeAppEngine()
 
 app.use(express.json())
-app.use(cookieParser())
+app.use(cookieParser(env.SESSION_SECRET))
 
 app.use('/api/session', sessionMiddleware, sessionRoutes)
 app.use('/api/users', sessionMiddleware, requireAuth, usersRoutes)

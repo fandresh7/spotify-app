@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { env } from '../config/env.config'
 
 export const getPlaylists = async (req: Request, res: Response) => {
-  const token = req.session.accessToken
+  const token = req.session?.accessToken || req.signedCookies?.['spotify_access_token']
 
   const { SPOTIFY_URI_API } = env
 
@@ -28,7 +28,7 @@ export const getPlaylists = async (req: Request, res: Response) => {
 }
 
 export const getPlaylistTracks = async (req: Request, res: Response) => {
-  const token = req.session.accessToken
+  const token = req.session?.accessToken || req.signedCookies?.['spotify_access_token']
   const { id } = req.params
   const { limit = '50', offset = '0' } = req.query
 
@@ -60,7 +60,7 @@ export const getPlaylistTracks = async (req: Request, res: Response) => {
 }
 
 export const updatePlaylistTracks = async (req: Request, res: Response) => {
-  const token = req.session.accessToken
+  const token = req.session?.accessToken || req.signedCookies?.['spotify_access_token']
   const { id } = req.params
   const { uris } = req.body
 

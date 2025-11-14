@@ -3,12 +3,14 @@ import { generateRandomString } from '../utils/random'
 import { env } from '../config/env.config'
 
 export const status = async (req: Request, res: Response) => {
-  const authenticated = !!req.session.accessToken
+  // Check both session and signed cookies for Vercel compatibility
+  const authenticated = !!(req.session?.accessToken || req.signedCookies?.['spotify_access_token'])
   res.json({ authenticated })
 }
 
 export const getAccessToken = async (req: Request, res: Response) => {
-  const token = req.session.accessToken
+  // Check both session and signed cookies for Vercel compatibility
+  const token = req.session?.accessToken || req.signedCookies?.['spotify_access_token']
 
   if (!token) {
     res.status(401).json({ error: 'No access token found' })
@@ -68,6 +70,22 @@ export const getToken = async (req: Request, res: Response) => {
     req.session.refreshToken = data.refresh_token
     req.session.expiresAt = Date.now() + data.expires_in * 1000
 
+    // Also set signed cookies for Vercel serverless compatibility
+    res.cookie('spotify_access_token', data.access_token, {
+      signed: true,
+      httpOnly: true,
+      secure: env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
+    })
+    res.cookie('spotify_refresh_token', data.refresh_token, {
+      signed: true,
+      httpOnly: true,
+      secure: env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
+    })
+
     res.json({
       success: true,
       expiresIn: data.expires_in
@@ -80,7 +98,8 @@ export const getToken = async (req: Request, res: Response) => {
 
 export const refreshToken = async (req: Request, res: Response) => {
   // En angular usar include en todas las peticiones
-  const { refreshToken } = req.session
+  // Check both session and signed cookies for Vercel compatibility
+  const refreshToken = req.session?.refreshToken || req.signedCookies?.['spotify_refresh_token']
 
   const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_URI } = env
   const authorization = Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString('base64')
@@ -115,6 +134,22 @@ export const refreshToken = async (req: Request, res: Response) => {
     req.session.accessToken = data.access_token
     req.session.refreshToken = data.refresh_token
     req.session.expiresAt = Date.now() + data.expires_in * 1000
+
+    // Also set signed cookies for Vercel serverless compatibility
+    res.cookie('spotify_access_token', data.access_token, {
+      signed: true,
+      httpOnly: true,
+      secure: env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
+    })
+    res.cookie('spotify_refresh_token', data.refresh_token, {
+      signed: true,
+      httpOnly: true,
+      secure: env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
+    })
 
     res.json({
       success: true,

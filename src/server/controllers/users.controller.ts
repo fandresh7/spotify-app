@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { env } from '../config/env.config'
 
 export const getMe = async (req: Request, res: Response) => {
-  const token = req.session.accessToken
+  const token = req.session?.accessToken || req.signedCookies?.['spotify_access_token']
 
   const { SPOTIFY_URI_API } = env
 
