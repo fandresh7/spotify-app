@@ -9,6 +9,7 @@
 
 <section
   cdkDropList
+  cdkDropListAutoScrollDisabled="false"
   [cdkDropListOrientation]="'horizontal'"
   (cdkDropListDropped)="dropPlaylist($event)"
   class="mt-4 flex h-full min-h-0 gap-4 overflow-x-auto overflow-y-hidden rounded-lg">
@@ -40,6 +41,7 @@
     <section
       cdkDropList
       [id]="playlist.id"
+      cdkDropListAutoScrollDisabled="false"
       [cdkDropListData]="playlist.tracks"
       [cdkDropListConnectedTo]="getConnectedLists()"
       (cdkDropListDropped)="dropTrack($event)"

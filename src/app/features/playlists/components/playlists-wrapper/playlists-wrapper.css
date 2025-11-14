@@ -72,6 +72,7 @@ section[cdkDrag]:hover {
 :host ::ng-deep section[cdkDropList] {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  scroll-behavior: smooth;
 }
 
 :host ::ng-deep section[cdkDropList]::-webkit-scrollbar {
@@ -90,4 +91,9 @@ section[cdkDrag]:hover {
 
 :host ::ng-deep section[cdkDropList]::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
+}
+
+/* Auto-scroll zones for drag */
+:host ::ng-deep .cdk-drop-list-dragging {
+  scroll-behavior: auto;
 }
