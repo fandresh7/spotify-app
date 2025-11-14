@@ -7,6 +7,17 @@ export const status = async (req: Request, res: Response) => {
   res.json({ authenticated })
 }
 
+export const getAccessToken = async (req: Request, res: Response) => {
+  const token = req.session.accessToken
+
+  if (!token) {
+    res.status(401).json({ error: 'No access token found' })
+    return
+  }
+
+  res.json({ accessToken: token })
+}
+
 export const authorize = async (req: Request, res: Response) => {
   const state = generateRandomString(16)
 

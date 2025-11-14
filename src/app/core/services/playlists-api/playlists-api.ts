@@ -19,6 +19,7 @@ export class PlaylistsApi {
   getPlaylistTracks(playlist: Playlist): Observable<PlaylistItemsResponse> {
     const tracks = playlist.tracks.total
     console.log({ tracks })
+
     return this.#http.get<PlaylistItemsResponse>(`/api/playlists/${playlist.id}`)
   }
 }

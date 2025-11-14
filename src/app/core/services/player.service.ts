@@ -35,48 +35,59 @@ export class PlayerService {
   }
 
   private initializePlayer() {
-    window.onSpotifyWebPlaybackSDKReady = () => {
-      const token = localStorage.getItem('spotify_access_token')
-
-      if (!token) {
-        console.warn('No access token found. Please login first.')
-        return
-      }
-
-      this.player = new window.Spotify.Player({
-        name: 'Spotify Clone Web Player',
-        getOAuthToken: (cb: (token: string) => void) => {
-          cb(token)
+    // Check if SDK is already loaded
+    if (window.Spotify) {
+      this.http.get<{ accessToken: string }>('/api/session/access-token').subscribe({
+        next: ({ accessToken }) => {
+          this.initializeSpotifyPlayer(accessToken)
         },
-        volume: 0.5
-      })
-
-      // Ready
-      this.player.addListener('ready', ({ device_id }: { device_id: string }) => {
-        console.log('Ready with Device ID', device_id)
-        this.deviceId = device_id
-      })
-
-      // Not Ready
-      this.player.addListener('not_ready', ({ device_id }: { device_id: string }) => {
-        console.log('Device ID has gone offline', device_id)
-      })
-
-      // Player state changed
-      this.player.addListener('player_state_changed', (state: any) => {
-        if (!state) return
-
-        this.isPlaying.set(!state.paused)
-
-        if (state.track_window.current_track) {
-          const track = state.track_window.current_track
-          console.log('Currently playing:', track.name)
+        error: err => {
+          console.error('Failed to get access token:', err)
         }
       })
-
-      // Connect to the player
-      this.player.connect()
+      return
     }
+
+    // Otherwise wait for SDK to load
+    window.onSpotifyWebPlaybackSDKReady = () => {
+      this.http.get<{ accessToken: string }>('/api/session/access-token').subscribe({
+        next: ({ accessToken }) => {
+          this.initializeSpotifyPlayer(accessToken)
+        },
+        error: err => {
+          console.error('Failed to get access token:', err)
+        }
+      })
+    }
+  }
+
+  private initializeSpotifyPlayer(token: string) {
+    this.player = new window.Spotify.Player({
+      name: 'Spotify Clone Web Player',
+      getOAuthToken: (cb: (token: string) => void) => {
+        cb(token)
+      },
+      volume: 0.5
+    })
+
+    // Ready
+    this.player.addListener('ready', ({ device_id }: { device_id: string }) => {
+      this.deviceId = device_id
+    })
+
+    // Not Ready
+    this.player.addListener('not_ready', () => {
+      this.deviceId = null
+    })
+
+    // Player state changed
+    this.player.addListener('player_state_changed', (state: any) => {
+      if (!state) return
+      this.isPlaying.set(!state.paused)
+    })
+
+    // Connect to the player
+    this.player.connect()
   }
 
   play(track: Track) {
@@ -91,32 +102,16 @@ export class PlayerService {
     this.isPlaying.set(true)
 
     if (!this.deviceId) {
-      console.warn('Device not ready yet')
       return
     }
 
-    const token = localStorage.getItem('spotify_access_token')
-    if (!token) {
-      console.warn('No access token found')
-      return
-    }
-
-    // Use Spotify Web API to play the track
+    // Call server endpoint to play the track
     this.http
-      .put(
-        `https://api.spotify.com/v1/me/player/play?device_id=${this.deviceId}`,
-        {
-          uris: [track.uri]
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      )
+      .put('/api/player/play', {
+        deviceId: this.deviceId,
+        uris: [track.uri]
+      })
       .subscribe({
-        next: () => console.log('Playing:', track.name),
         error: err => console.error('Error playing track:', err)
       })
   }
@@ -125,7 +120,6 @@ export class PlayerService {
     if (this.player) {
       this.player.pause().then(() => {
         this.isPlaying.set(false)
-        console.log('Paused')
       })
     }
   }
@@ -134,7 +128,6 @@ export class PlayerService {
     if (this.player && this.currentTrack()) {
       this.player.resume().then(() => {
         this.isPlaying.set(true)
-        console.log('Resumed')
       })
     }
   }
@@ -153,6 +146,5 @@ export class PlayerService {
     }
     this.currentTrack.set(null)
     this.isPlaying.set(false)
-    console.log('Stopped')
   }
 }
