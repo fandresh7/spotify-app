@@ -44,6 +44,16 @@ song-card.cdk-drag-preview {
   transform: translateZ(0);
 }
 
+/* Playlist card styling */
+section[cdkDrag] {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 200ms ease, transform 150ms ease;
+}
+
+section[cdkDrag]:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
 /* Drag handle */
 .cdk-drag-handle {
   cursor: grab;

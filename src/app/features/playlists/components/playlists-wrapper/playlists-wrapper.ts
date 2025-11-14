@@ -13,6 +13,7 @@ interface DragDropPlaylist {
   name: string
   tracks: Track[]
   original: boolean
+  color: string
 }
 
 @Component({
@@ -36,7 +37,8 @@ export class PlaylistsWrapper {
       id: this.playlist().id,
       name: this.playlist().name,
       tracks: this.tracks(),
-      original: true
+      original: true,
+      color: 'linear-gradient(135deg, #1e3a5f 0%, #0d1b2a 100%)'
     }
 
     const supportPlaylists = [
@@ -44,24 +46,38 @@ export class PlaylistsWrapper {
         id: 'liked-songs',
         name: 'Liked songs',
         tracks: [],
-        original: false
+        original: false,
+        color: 'linear-gradient(135deg, #5b21b6 0%, #3b0764 100%)'
       },
       {
         id: 'recently-played',
         name: 'Recently played',
         tracks: [],
-        original: false
+        original: false,
+        color: 'linear-gradient(135deg, #0d9488 0%, #134e4a 100%)'
       },
       {
         id: 'your-top-songs',
         name: 'Your top songs',
         tracks: [],
-        original: false
+        original: false,
+        color: 'linear-gradient(135deg, #ea580c 0%, #9a3412 100%)'
       }
     ]
 
     return [original, ...supportPlaylists]
   })
+
+  private playlistColors = [
+    'linear-gradient(135deg, #db2777 0%, #831843 100%)', // Pink
+    'linear-gradient(135deg, #4f46e5 0%, #312e81 100%)', // Indigo
+    'linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%)', // Red
+    'linear-gradient(135deg, #16a34a 0%, #14532d 100%)', // Green
+    'linear-gradient(135deg, #0891b2 0%, #164e63 100%)', // Cyan
+    'linear-gradient(135deg, #c026d3 0%, #701a75 100%)' // Fuchsia
+  ]
+
+  private colorIndex = 0
 
   dropPlaylist(event: CdkDragDrop<DragDropPlaylist[]>) {
     const playlists = [...this.playlists()]
@@ -116,9 +132,11 @@ export class PlaylistsWrapper {
         id: `playlist-${Date.now()}`,
         name,
         tracks: [],
-        original: false
+        original: false,
+        color: this.playlistColors[this.colorIndex % this.playlistColors.length]
       }
 
+      this.colorIndex++
       this.playlists.update(playlists => [...playlists, newPlaylist])
     })
   }

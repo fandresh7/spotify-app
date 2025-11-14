@@ -16,7 +16,8 @@
   <section
     cdkDrag
     [cdkDragData]="playlist"
-    class="bg-dark-base/50 flex w-80 flex-shrink-0 flex-col gap-4 overflow-hidden rounded-lg p-4">
+    [style.background]="playlist.color"
+    class="flex w-80 flex-shrink-0 flex-col gap-4 overflow-hidden rounded-lg p-4">
     <section class="flex items-center justify-between">
       <div>
         <h3 class="font-bold">{{ playlist.name }}</h3>
