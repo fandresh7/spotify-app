@@ -37,6 +37,7 @@
     "@angular/build": "^20.3.5",
     "@angular/cli": "^20.3.5",
     "@angular/compiler-cli": "^20.3.0",
+    "@netlify/angular-runtime": "^3.0.1",
     "@types/cookie-parser": "^1.4.9",
     "@types/express": "^5.0.1",
     "@types/express-session": "^1.18.2",
