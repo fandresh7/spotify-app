@@ -96,7 +96,7 @@ export class PlaylistsWrapper {
 
   save() {
     const playlists = this.playlists()
-    const tracks = playlists.map(p => p.tracks).flat()
+    const tracks = playlists.flatMap(p => p.tracks)
 
     console.log(tracks)
   }
