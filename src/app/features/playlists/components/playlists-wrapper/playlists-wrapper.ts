@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, input, linkedSignal, signal } from '@angular/core'
 import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop'
+import { HttpClient } from '@angular/common/http'
 
 import { Playlist } from '@core/interfaces/playlists.interfaces'
 import { Track } from '@core/interfaces/songs.interface'
@@ -27,6 +28,7 @@ interface DragDropPlaylist {
   }
 })
 export class PlaylistsWrapper {
+  private http = inject(HttpClient)
   dialog = inject(Dialog)
 
   playlist = input.required<Playlist>()
@@ -96,9 +98,31 @@ export class PlaylistsWrapper {
 
   save() {
     const playlists = this.playlists()
-    const tracks = playlists.flatMap(p => p.tracks)
 
-    console.log(tracks)
+    // Find the original playlist (the one from Spotify)
+    const originalPlaylist = playlists.find(p => p.original)
+
+    if (!originalPlaylist) {
+      console.error('No original playlist found')
+      return
+    }
+
+    // Get all track URIs from the original playlist
+    const trackUris = originalPlaylist.tracks.map(track => track.uri)
+
+    // Update the playlist in Spotify
+    this.http
+      .put(`/api/playlists/${originalPlaylist.id}/tracks`, {
+        uris: trackUris
+      })
+      .subscribe({
+        next: () => {
+          console.log('Playlist updated successfully')
+        },
+        error: err => {
+          console.error('Error updating playlist:', err)
+        }
+      })
   }
 
   openCreatePlaylistModal() {
