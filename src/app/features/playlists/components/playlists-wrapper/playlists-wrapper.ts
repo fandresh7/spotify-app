@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, input, linkedSignal } from '@angular/core'
+import { ChangeDetectionStrategy, Component, inject, input, linkedSignal, signal } from '@angular/core'
 import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop'
 
 import { Playlist } from '@core/interfaces/playlists.interfaces'
@@ -32,6 +32,18 @@ export class PlaylistsWrapper {
   playlist = input.required<Playlist>()
   tracks = input.required<Track[]>()
 
+  private playlistColors = [
+    'linear-gradient(135deg, #5b21b6 0%, #3b0764 100%)', // Purple
+    'linear-gradient(135deg, #0d9488 0%, #134e4a 100%)', // Teal
+    'linear-gradient(135deg, #ea580c 0%, #9a3412 100%)', // Orange
+    'linear-gradient(135deg, #db2777 0%, #831843 100%)', // Pink
+    'linear-gradient(135deg, #4f46e5 0%, #312e81 100%)', // Indigo
+    'linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%)', // Red
+    'linear-gradient(135deg, #16a34a 0%, #14532d 100%)', // Green
+    'linear-gradient(135deg, #0891b2 0%, #164e63 100%)', // Cyan
+    'linear-gradient(135deg, #c026d3 0%, #701a75 100%)' // Fuchsia
+  ]
+
   playlists = linkedSignal(() => {
     const original = {
       id: this.playlist().id,
@@ -41,43 +53,10 @@ export class PlaylistsWrapper {
       color: 'linear-gradient(135deg, #1e3a5f 0%, #0d1b2a 100%)'
     }
 
-    const supportPlaylists = [
-      {
-        id: 'liked-songs',
-        name: 'Liked songs',
-        tracks: [],
-        original: false,
-        color: 'linear-gradient(135deg, #5b21b6 0%, #3b0764 100%)'
-      },
-      {
-        id: 'recently-played',
-        name: 'Recently played',
-        tracks: [],
-        original: false,
-        color: 'linear-gradient(135deg, #0d9488 0%, #134e4a 100%)'
-      },
-      {
-        id: 'your-top-songs',
-        name: 'Your top songs',
-        tracks: [],
-        original: false,
-        color: 'linear-gradient(135deg, #ea580c 0%, #9a3412 100%)'
-      }
-    ]
-
-    return [original, ...supportPlaylists]
+    return [original]
   })
 
-  private playlistColors = [
-    'linear-gradient(135deg, #db2777 0%, #831843 100%)', // Pink
-    'linear-gradient(135deg, #4f46e5 0%, #312e81 100%)', // Indigo
-    'linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%)', // Red
-    'linear-gradient(135deg, #16a34a 0%, #14532d 100%)', // Green
-    'linear-gradient(135deg, #0891b2 0%, #164e63 100%)', // Cyan
-    'linear-gradient(135deg, #c026d3 0%, #701a75 100%)' // Fuchsia
-  ]
-
-  private colorIndex = 0
+  private colorIndex = signal(0)
 
   dropPlaylist(event: CdkDragDrop<DragDropPlaylist[]>) {
     const playlists = [...this.playlists()]
@@ -118,6 +97,7 @@ export class PlaylistsWrapper {
   openCreatePlaylistModal() {
     const dialogRef = this.dialog.open(CreatePlaylistModal, {
       panelClass: 'modal',
+      autoFocus: 'input',
       data: {
         type: 'create'
       }
@@ -133,10 +113,10 @@ export class PlaylistsWrapper {
         name,
         tracks: [],
         original: false,
-        color: this.playlistColors[this.colorIndex % this.playlistColors.length]
+        color: this.playlistColors[this.colorIndex() % this.playlistColors.length]
       }
 
-      this.colorIndex++
+      this.colorIndex.update(index => index + 1)
       this.playlists.update(playlists => [...playlists, newPlaylist])
     })
   }
@@ -144,6 +124,7 @@ export class PlaylistsWrapper {
   openEditPlaylistModal(playlist: DragDropPlaylist) {
     const dialogRef = this.dialog.open(CreatePlaylistModal, {
       panelClass: 'modal',
+      autoFocus: 'input',
       data: {
         type: 'edit',
         name: playlist.name
