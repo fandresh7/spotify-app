@@ -179,3 +179,34 @@ body {
   background-color: var(--color-spotify);
   color: var(--color-dark);
 }
+
+/* ========================================
+   🎯 MODAL STYLES
+   ======================================== */
+
+/* Modal overlay */
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal container */
+.modal {
+  background-color: var(--color-dark-elevated);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  max-width: 500px;
+  width: 90vw;
+  box-shadow: var(--shadow-overlay);
+  animation: modalFadeIn 200ms ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

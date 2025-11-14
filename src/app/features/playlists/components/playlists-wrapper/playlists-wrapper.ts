@@ -1,10 +1,12 @@
-import { ChangeDetectionStrategy, Component, input, linkedSignal } from '@angular/core'
+import { ChangeDetectionStrategy, Component, inject, input, linkedSignal } from '@angular/core'
 import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop'
 
 import { Playlist } from '@core/interfaces/playlists.interfaces'
 import { Track } from '@core/interfaces/songs.interface'
 import { Icon } from '@shared/components'
 import { SongCard } from '@features/songs/components/song-card/song-card'
+import { Dialog } from '@angular/cdk/dialog'
+import { CreatePlaylistModal } from '../create-playlist-modal/create-playlist-modal'
 
 interface DragDropPlaylist {
   id: string
@@ -24,6 +26,8 @@ interface DragDropPlaylist {
   }
 })
 export class PlaylistsWrapper {
+  dialog = inject(Dialog)
+
   playlist = input.required<Playlist>()
   tracks = input.required<Track[]>()
 
@@ -93,6 +97,48 @@ export class PlaylistsWrapper {
         this.playlists.set(playlists)
       }
     }
+  }
+
+  openCreatePlaylistModal() {
+    const dialogRef = this.dialog.open(CreatePlaylistModal, {
+      panelClass: 'modal',
+      data: {
+        type: 'create'
+      }
+    })
+
+    dialogRef.closed.subscribe(data => {
+      if (!data) return
+
+      const name = (data as { name: string }).name
+
+      const newPlaylist: DragDropPlaylist = {
+        id: `playlist-${Date.now()}`,
+        name,
+        tracks: [],
+        original: false
+      }
+
+      this.playlists.update(playlists => [...playlists, newPlaylist])
+    })
+  }
+
+  openEditPlaylistModal(playlist: DragDropPlaylist) {
+    const dialogRef = this.dialog.open(CreatePlaylistModal, {
+      panelClass: 'modal',
+      data: {
+        type: 'edit',
+        name: playlist.name
+      }
+    })
+
+    dialogRef.closed.subscribe(data => {
+      if (!data) return
+
+      const name = (data as { name: string }).name
+
+      this.playlists.update(playlists => playlists.map(p => (p.id === playlist.id ? { ...p, name } : p)))
+    })
   }
 
   getConnectedLists(): string[] {
