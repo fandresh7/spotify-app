@@ -107,13 +107,14 @@ export class PlaylistsWrapper {
       return
     }
 
-    // Get all track URIs from the original playlist
-    const trackUris = originalPlaylist.tracks.map(track => track.uri)
+    // Get all tracks from all playlists in order
+    const allTracks = playlists.flatMap(p => p.tracks)
+    const uris = allTracks.map(t => t.uri)
 
-    // Update the playlist in Spotify
+    // Update the playlist in Spotify with all tracks
     this.http
       .put(`/api/playlists/${originalPlaylist.id}/tracks`, {
-        uris: trackUris
+        uris
       })
       .subscribe({
         next: () => {

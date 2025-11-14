@@ -66,23 +66,58 @@ export const updatePlaylistTracks = async (req: Request, res: Response) => {
 
   const { SPOTIFY_URI_API } = env
 
+  if (!uris || !Array.isArray(uris)) {
+    res.status(400).json({ error: 'uris must be an array' })
+    return
+  }
+
   try {
-    const response = await fetch(`${SPOTIFY_URI_API}/playlists/${id}/tracks`, {
+    // First, clear the playlist by replacing with empty array
+    const clearResponse = await fetch(`${SPOTIFY_URI_API}/playlists/${id}/tracks`, {
       method: 'PUT',
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ uris })
+      body: JSON.stringify({ uris: [] })
     })
 
-    if (!response.ok) {
-      const data = await response.json()
-      res.status(response.status).json(data)
+    if (!clearResponse.ok) {
+      const data = await clearResponse.json()
+      console.error('Spotify API error clearing playlist:', data)
+      res.status(clearResponse.status).json(data)
       return
     }
 
-    res.status(200).json({ success: true })
+    // Spotify API limit is 100 tracks per request
+    // Split uris into chunks of 100
+    const chunkSize = 100
+    const chunks: string[][] = []
+
+    for (let i = 0; i < uris.length; i += chunkSize) {
+      chunks.push(uris.slice(i, i + chunkSize))
+    }
+
+    // Add tracks in chunks
+    for (const chunk of chunks) {
+      const response = await fetch(`${SPOTIFY_URI_API}/playlists/${id}/tracks`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ uris: chunk })
+      })
+
+      if (!response.ok) {
+        const data = await response.json()
+        console.error('Spotify API error adding tracks:', data)
+        res.status(response.status).json(data)
+        return
+      }
+    }
+
+    res.status(200).json({ success: true, tracksAdded: uris.length })
   } catch (error) {
     console.error(error)
     res.status(500).json({ error: 'Internal Server Error' })
