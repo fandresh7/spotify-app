@@ -1,9 +1,14 @@
-<section>
+<section class="flex items-center justify-end gap-3">
   <button
     (click)="openCreatePlaylistModal()"
     class="bg-spotify text-dark hover:bg-spotify-hover active:bg-spotify-active flex items-center gap-2 rounded-full px-4 py-2 font-semibold transition-all duration-200">
     <icon name="plus"></icon>
     <span>New playlist</span>
+  </button>
+  <button
+    (click)="save()"
+    class="border-spotify text-spotify hover:bg-spotify hover:text-dark rounded-full border-2 px-6 py-2 font-semibold transition-all duration-200">
+    Save
   </button>
 </section>
 

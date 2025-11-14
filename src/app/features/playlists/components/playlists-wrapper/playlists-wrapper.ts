@@ -94,6 +94,13 @@ export class PlaylistsWrapper {
     }
   }
 
+  save() {
+    const playlists = this.playlists()
+    const tracks = playlists.map(p => p.tracks).flat()
+
+    console.log(tracks)
+  }
+
   openCreatePlaylistModal() {
     const dialogRef = this.dialog.open(CreatePlaylistModal, {
       panelClass: 'modal',
