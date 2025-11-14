@@ -30,11 +30,16 @@ export const getPlaylists = async (req: Request, res: Response) => {
 export const getPlaylistTracks = async (req: Request, res: Response) => {
   const token = req.session.accessToken
   const { id } = req.params
+  const { limit = '50', offset = '0' } = req.query
 
   const { SPOTIFY_URI_API } = env
 
   try {
-    const response = await fetch(`${SPOTIFY_URI_API}/playlists/${id}/tracks`, {
+    const url = new URL(`${SPOTIFY_URI_API}/playlists/${id}/tracks`)
+    url.searchParams.set('limit', limit as string)
+    url.searchParams.set('offset', offset as string)
+
+    const response = await fetch(url.toString(), {
       headers: {
         Authorization: `Bearer ${token}`
       }

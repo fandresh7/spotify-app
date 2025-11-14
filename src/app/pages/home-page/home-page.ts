@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core'
-import { firstValueFrom, map } from 'rxjs'
+import { firstValueFrom } from 'rxjs'
 
 import { Playlist } from '@core/interfaces/playlists.interfaces'
 import { Track } from '@core/interfaces/songs.interface'
@@ -30,10 +30,7 @@ export class HomePage {
   async loadPlaylistTracks(playlist: Playlist) {
     this.tracks.set([])
 
-    const response$ = this.playlistsApi.getPlaylistTracks(playlist).pipe(map(response => response.items))
-    const response = await firstValueFrom(response$)
-
-    const tracks = response.map(item => item.track)
+    const tracks = await firstValueFrom(this.playlistsApi.getPlaylistTracks(playlist))
     this.tracks.set(tracks)
   }
 
