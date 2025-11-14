@@ -3,7 +3,7 @@ import { getPlaylists, getPlaylistTracks } from '../controllers/playlists.contro
 
 const router = Router()
 
-router.get('/playlists', getPlaylists)
-router.get('/playlists/:id', getPlaylistTracks)
+router.get('/', getPlaylists)
+router.get('/:id', getPlaylistTracks)
 
 export default router

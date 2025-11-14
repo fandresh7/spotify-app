@@ -4,6 +4,7 @@ import { LoginPage } from '@features/auth/pages/login-page/login-page'
 import { CallbackPage } from '@features/auth/pages/callback-page/callback-page'
 import { HomePage } from '@pages/home-page/home-page'
 import { Layout } from '@layout/layout'
+import { authGuard } from '@core/guards/auth.guard'
 
 export const routes: Routes = [
   {
@@ -17,6 +18,7 @@ export const routes: Routes = [
   {
     path: '',
     component: Layout,
+    canActivate: [authGuard],
     children: [
       {
         path: '',

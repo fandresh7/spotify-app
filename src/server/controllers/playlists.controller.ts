@@ -29,12 +29,12 @@ export const getPlaylists = async (req: Request, res: Response) => {
 
 export const getPlaylistTracks = async (req: Request, res: Response) => {
   const token = req.session.accessToken
-  const { playlistId } = req.params
+  const { id } = req.params
 
   const { SPOTIFY_URI_API } = env
 
   try {
-    const response = await fetch(`${SPOTIFY_URI_API}/playlists/${playlistId}/tracks`, {
+    const response = await fetch(`${SPOTIFY_URI_API}/playlists/${id}/tracks`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
