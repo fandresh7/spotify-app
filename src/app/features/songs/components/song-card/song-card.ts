@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core'
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core'
 import { Track } from '@core/interfaces/songs.interface'
+import { PlayerService } from '@core/services/player.service'
 import { Icon } from '@shared/components'
 
 @Component({
@@ -12,5 +13,16 @@ import { Icon } from '@shared/components'
   }
 })
 export class SongCard {
+  private playerService = inject(PlayerService)
+
   track = input.required<Track>()
+
+  isPlaying = computed(() => {
+    return this.playerService.track()?.id === this.track().id && this.playerService.playing()
+  })
+
+  onPlayClick(event: Event) {
+    event.stopPropagation()
+    this.playerService.play(this.track())
+  }
 }
