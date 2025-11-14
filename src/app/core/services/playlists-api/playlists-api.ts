@@ -19,7 +19,6 @@ export class PlaylistsApi {
   getPlaylistTracks(playlist: Playlist): Observable<Track[]> {
     const total = playlist.tracks.total
     const limit = 50
-    const pages = Math.ceil(total / limit)
 
     // If no tracks, return empty array
     if (total === 0) {
@@ -29,10 +28,9 @@ export class PlaylistsApi {
     // Create array of requests for each page
     const requests: Observable<PlaylistItemsResponse>[] = []
 
-    for (let i = 0; i < pages; i++) {
-      const offset = i * limit
+    // Calculate how many requests we need
+    for (let offset = 0; offset < total; offset += limit) {
       const params = new HttpParams().set('limit', limit).set('offset', offset)
-
       requests.push(this.#http.get<PlaylistItemsResponse>(`/api/playlists/${playlist.id}`, { params }))
     }
 
